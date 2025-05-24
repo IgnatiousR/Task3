@@ -11,8 +11,8 @@ class TableGenerator
     }
     public function generate($dice, Probability $probability)
     {
-        for( $i = 0; $i<count($dice); $i++ ){
-            for($j=$i+1; $j < count($dice); $j++ ){
+        for($i=0; $i<count($dice); $i++){
+            for($j=$i+1; $j<count($dice); $j++){
                 $probResult = $probability->CalculateProbility(explode(',', $dice[$i]), explode(',', $dice[$j]));
                 $this->tabl->addRow(array($dice[$i], $dice[$j], $probResult[0], $probResult[1], $probResult[2]));
             }
